@@ -5,6 +5,7 @@
 [functions]
   node_bundler = "esbuild"
 
+# Headers utiles pour les cookies de session
 [[headers]]
   for = "/*"
   [headers.values]
