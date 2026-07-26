@@ -1,8 +1,12 @@
 exports.handler = async (event) => {
   const query = event.queryStringParameters || {};
   
-  // Utilisation de la racine du site pour éviter le 404
-  const redirectTo = query.redirect || "/index.html"; 
+  // Récupération propre de l'URL de base sans doubler les variables
+  const rawAppUrl = process.env.APP_URL || 'https://raiddefender.netlify.app';
+  const baseUrl = rawAppUrl.startsWith('APP_URL=') ? rawAppUrl.replace('APP_URL=', '') : rawAppUrl;
+
+  // Chemin de redirection par défaut vers votre page d'accueil
+  const redirectTo = query.redirect || `${baseUrl}/site/pages/index.html`;
 
   return {
     statusCode: 302,
@@ -10,7 +14,7 @@ exports.handler = async (event) => {
       Location: redirectTo,
       "Cache-Control": "no-store",
     },
-    // ✅ La syntaxe correcte exigée par Netlify pour supprimer plusieurs cookies
+    // Utilisation du format de cookies natif de Netlify pour éviter l'erreur Lambda
     cookies: [
       "rd_session=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0",
       "rd_oauth=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0",
