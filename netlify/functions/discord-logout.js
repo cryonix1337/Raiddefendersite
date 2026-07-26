@@ -1,9 +1,7 @@
-const { cookie } = require("./discord-auth");
-
 exports.handler = async (event) => {
   const query = event.queryStringParameters || {};
   
-  // Utilisation d'un chemin relatif propre pour éviter le 404
+  // Utilisation de la racine du site pour éviter le 404
   const redirectTo = query.redirect || "/index.html"; 
 
   return {
@@ -12,7 +10,7 @@ exports.handler = async (event) => {
       Location: redirectTo,
       "Cache-Control": "no-store",
     },
-    // ✅ Le nouveau standard Netlify pour plusieurs cookies :
+    // ✅ La syntaxe correcte exigée par Netlify pour supprimer plusieurs cookies
     cookies: [
       "rd_session=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0",
       "rd_oauth=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0",
