@@ -1,0 +1,453 @@
+{
+  "users": [
+    {
+      "id": "1000515111850606653",
+      "reason": "speudo inapproprié",
+      "by": "837217790929928223",
+      "at": "2026-06-12T15:29:08.490Z"
+    },
+    {
+      "id": "1345497613826392135",
+      "reason": "raid",
+      "by": "837217790929928223",
+      "at": "2026-06-12T15:29:41.740Z"
+    },
+    {
+      "id": "1233891554658226216",
+      "reason": "spam ping",
+      "by": "837217790929928223",
+      "at": "2026-06-12T15:30:25.202Z"
+    },
+    {
+      "id": "1505667144405487831",
+      "reason": "spam",
+      "by": "837217790929928223",
+      "at": "2026-06-16T16:16:45.968Z"
+    },
+    {
+      "id": "1518741122132869311",
+      "reason": "= spam",
+      "by": "837217790929928223",
+      "at": "2026-06-23T04:05:18.312Z"
+    },
+    {
+      "id": "852577688958009435",
+      "reason": "= lange inapproprié",
+      "by": "837217790929928223",
+      "at": "2026-06-23T04:05:36.174Z"
+    },
+    {
+      "id": "1330537153561755650",
+      "reason": "spam",
+      "by": "837217790929928223",
+      "at": "2026-06-23T15:40:34.263Z"
+    },
+    {
+      "id": "946574665034366986",
+      "reason": "Aucune raison",
+      "by": "837217790929928223",
+      "at": "2026-06-25T15:12:34.682Z"
+    },
+    {
+      "id": "240945112970952705",
+      "reason": "Raid, Spam, Complicite, Dox",
+      "reasons": [
+        "raid",
+        "spam",
+        "complicite",
+        "dox"
+      ],
+      "level": 6,
+      "proof": "bl a vie",
+      "by": "837217790929928223",
+      "requestedBy": "837217790929928223",
+      "at": "2026-06-26T10:50:29.320Z"
+    },
+    {
+      "id": "1336446688541278310",
+      "reason": "Spam",
+      "reasons": [
+        "spam"
+      ],
+      "level": 1,
+      "proof": "spam",
+      "by": "837217790929928223",
+      "requestedBy": "837217790929928223",
+      "at": "2026-07-01T10:26:10.987Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Spam",
+          "reasons": [
+            "spam"
+          ],
+          "level": 1,
+          "proof": "spam",
+          "by": "837217790929928223",
+          "requestedBy": "837217790929928223",
+          "at": "2026-07-01T10:26:10.987Z"
+        }
+      ]
+    },
+    {
+      "id": "1065643129794994216",
+      "reason": "Spam",
+      "reasons": [
+        "spam"
+      ],
+      "level": 1,
+      "proof": "spam",
+      "by": "837217790929928223",
+      "requestedBy": "837217790929928223",
+      "at": "2026-07-03T10:40:47.395Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Spam",
+          "reasons": [
+            "spam"
+          ],
+          "level": 1,
+          "proof": "spam",
+          "by": "837217790929928223",
+          "requestedBy": "837217790929928223",
+          "at": "2026-07-03T10:40:47.395Z"
+        }
+      ]
+    },
+    {
+      "id": "1093570546047918090",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "/",
+      "by": "837217790929928223",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:15:58.008Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "/",
+          "by": "837217790929928223",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:15:58.008Z"
+        }
+      ]
+    },
+    {
+      "id": "1045414180297113750",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox",
+      "by": "1294357731192606804",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:16:22.509Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:16:22.509Z"
+        }
+      ]
+    },
+    {
+      "id": "1245428105271574673",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox !aeblacklist 779834246042746890 dox",
+      "by": "1294357731192606804",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:17:03.812Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox !aeblacklist 779834246042746890 dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:17:03.812Z"
+        }
+      ]
+    },
+    {
+      "id": "779834246042746890",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox",
+      "by": "1294357731192606804",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:17:18.585Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:17:18.585Z"
+        }
+      ]
+    },
+    {
+      "id": "1043228477077332068",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox",
+      "by": "1294357731192606804",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:18:06.138Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:18:06.138Z"
+        }
+      ]
+    },
+    {
+      "id": "892443715468140565",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox",
+      "by": "1294357731192606804",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:18:22.556Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:18:22.556Z"
+        }
+      ]
+    },
+    {
+      "id": "958453292256596038",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox",
+      "by": "1294357731192606804",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:18:38.466Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:18:38.466Z"
+        }
+      ]
+    },
+    {
+      "id": "1500888123981303849",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox",
+      "by": "837217790929928223",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:20:09.978Z",
+      "totalBlacklists": 3,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:18:59.451Z"
+        },
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:19:55.069Z"
+        },
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "837217790929928223",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:20:09.978Z"
+        }
+      ]
+    },
+    {
+      "id": "1501625647062323282",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox",
+      "by": "1294357731192606804",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:20:05.268Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:20:05.268Z"
+        }
+      ]
+    },
+    {
+      "id": "839201863845150770",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox",
+      "by": "1294357731192606804",
+      "requestedBy": "1294357731192606804",
+      "at": "2026-07-06T20:20:21.336Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "1294357731192606804",
+          "requestedBy": "1294357731192606804",
+          "at": "2026-07-06T20:20:21.336Z"
+        }
+      ]
+    },
+    {
+      "id": "1256256185720377446",
+      "reason": "Dox",
+      "reasons": [
+        "dox"
+      ],
+      "level": 6,
+      "proof": "dox",
+      "by": "837217790929928223",
+      "requestedBy": "837217790929928223",
+      "at": "2026-07-08T13:30:16.515Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Dox",
+          "reasons": [
+            "dox"
+          ],
+          "level": 6,
+          "proof": "dox",
+          "by": "837217790929928223",
+          "requestedBy": "837217790929928223",
+          "at": "2026-07-08T13:30:16.515Z"
+        }
+      ]
+    },
+    {
+      "id": "1434687419176849439",
+      "reason": "Spam",
+      "reasons": [
+        "spam"
+      ],
+      "level": 1,
+      "proof": "injure",
+      "by": "837217790929928223",
+      "requestedBy": "837217790929928223",
+      "at": "2026-07-08T17:36:54.779Z",
+      "totalBlacklists": 1,
+      "history": [
+        {
+          "reason": "Spam",
+          "reasons": [
+            "spam"
+          ],
+          "level": 1,
+          "proof": "injure",
+          "by": "837217790929928223",
+          "requestedBy": "837217790929928223",
+          "at": "2026-07-08T17:36:54.779Z"
+        }
+      ]
+    }
+  ]
+}

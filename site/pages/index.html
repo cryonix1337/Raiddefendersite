@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaidDefender - Anti-Raid Discord</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <script src="../js/stats.js" defer></script>
+  <script src="../js/discord-auth.js" defer></script>
+</head>
+  <!-- Icône / Favicon -->
+  <link rel="icon" href="../assets/raiddefender.png" type="image/png">
+  <!-- Optionnel : icône pour Apple devices -->
+  <link rel="apple-touch-icon" href="../assets/raiddefender.png">
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Accueil RaidDefender">
+      <img class="brand-logo" src="../assets/raiddefender.png" alt="RaidDefender">
+      <span>RaidDefender</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="commandes.html">Commandes Bot</a>
+      <a href="conditions.html">Conditions</a>
+      <a href="confidentialite.html">Confidentialite</a>
+      <a href="notre equipe.html">Notre equipe</a>
+      <a href="premium.html">Premium</a>
+      <a data-discord-login href="/.netlify/functions/discord-login">Connexion Discord</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-media">
+        <img src="../assets/raidDefender-bannier.png" alt="RaidDefender, bot antiraid, securite, performance">
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Protection anti-raid Discord</p>
+        <h1>RaidDefender garde ton serveur sous controle.</h1>
+        <p class="intro">
+          Detection rapide, blocage automatique, blacklist centralisee et statistiques en temps reel pour garder ta communaute tranquille.
+        </p>
+
+        <div class="actions">
+          <a class="primary-action" href="commandes.html">Voir les commandes</a>
+          <a class="secondary-action" href="#stats">Voir les stats</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div>
+        <p class="eyebrow">Defense automatique</p>
+        <h2>Une securite claire, rapide et visible.</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article>
+          <h3>Anti-raid</h3>
+          <p>Analyse les arrivees massives, les comptes suspects et les actions dangereuses avant qu'elles explosent le serveur.</p>
+        </article>
+        <article>
+          <h3>Blacklist</h3>
+          <p>Garde une liste noire synchronisee pour bloquer les profils deja identifies comme menaces.</p>
+        </article>
+        <article>
+          <h3>Logs propres</h3>
+          <p>Affiche les actions importantes dans un salon de logs pour comprendre ce que le bot a bloque.</p>
+        </article>
+        <article>
+          <h3>Configuration</h3>
+          <p>Active les protections dont tu as besoin sans noyer ton equipe sous des reglages inutiles.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>RaidDefender</span>
+    <span>Bot anti-raid Discord</span>
+  </footer>
+</body>
+</html>

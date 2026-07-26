@@ -1,0 +1,17 @@
+{
+  "name": "aegis-protect",
+  "version": "1.0.0",
+  "description": "Site anti-raid Aegis Protect avec API de statistiques pour un bot Discord existant.",
+  "main": "server.js",
+  "scripts": {
+    "site": "node server.js",
+    "payment": "node server.js",
+    "dev": "concurrently \"npm run start\" \"npm run payment\""
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "stripe": "^22.3.2"
+  }
+}

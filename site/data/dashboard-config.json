@@ -1,0 +1,41 @@
+{
+  "guild": {
+    "id": "118932456789012345",
+    "name": "RaidDefender",
+    "members": 2847
+  },
+  "general": {
+    "enabled": true,
+    "language": "fr",
+    "timezone": "Europe/Paris",
+    "alertChannel": "securite-alertes",
+    "logChannel": "logs-RaidDefender"
+  },
+  "thresholds": {
+    "joinsPerMinute": 12,
+    "mentionsPerMessage": 5,
+    "messagesPerTenSeconds": 8,
+    "accountAgeDays": 7
+  },
+  "modules": {
+    "antiban": true,
+    "antibot": true,
+    "antighostping": true,
+    "antikick": true,
+    "antilink": true,
+    "antiinvite": true,
+    "antispam": true,
+    "antitoken": true,
+    "captcha": true,
+    "ban": true,
+    "clear": true,
+    "kick": true,
+    "mute": true,
+    "purge": true,
+    "raidmode": true,
+    "unban": true,
+    "unmute": true,
+    "warn": true
+  },
+  "theme": "dark"
+}
