@@ -113,12 +113,15 @@ exports.handler = async (event) => {
     const dashboardPath = "/site/pages/dashboard.html";
     const location = appUrl ? `${appUrl}${dashboardPath}` : dashboardPath;
 
+    // ✅ CORRECTION ICI : Utilisation de multiValueHeaders pour le tableau de cookies
     return {
       statusCode: 302,
       headers: {
         Location: location,
-        "Set-Cookie": [sessionCookie(profile), clearOauthCookie()],
         "Cache-Control": "no-store",
+      },
+      multiValueHeaders: {
+        "Set-Cookie": [sessionCookie(profile), clearOauthCookie()],
       },
       body: "",
     };
