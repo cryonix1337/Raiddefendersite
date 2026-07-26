@@ -74,7 +74,6 @@ button, select { cursor: pointer; }
 .top-actions { display: flex; align-items: center; gap: 13px; }
 .icon-button, .avatar, .menu-button { position: relative; border: 0; background: transparent; color: #d3cce5; font-size: 21px; }
 .icon-button i { position: absolute; top: 1px; right: 0; width: 7px; height: 7px; border-radius: 50%; background: #ff695c; }
-.avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: visible !important; }
 .menu-button { display: none; }
 
 /* Dashboard Status & Metrics */
@@ -150,9 +149,20 @@ button, select { cursor: pointer; }
 .toast { position: fixed; z-index: 5; right: 24px; bottom: 24px; transform: translateY(80px); opacity: 0; padding: 13px 17px; border: 1px solid #5d4eb0; border-radius: 9px; background: #292348; color: #fff; box-shadow: 0 10px 30px #0005; transition: .25s; }
 .toast.show { transform: none; opacity: 1; }
 
-/* Style Discord Avatar & Bouton Déconnexion */
+/* Style Discord Avatar & Profil Utilisateur (CORRIGÉ) */
 .user-menu { display: flex; align-items: center; gap: 12px; }
-.user-chip { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 600; }
+.user-chip { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  padding: 4px 12px 4px 6px;
+  border-radius: 999px;
+  background: rgba(128, 103, 235, 0.12);
+  border: 1px solid rgba(128, 103, 235, 0.25);
+  text-decoration: none; 
+  color: var(--text); 
+  font-weight: 600; 
+}
 
 .logout-btn {
   color: #ff695c;
@@ -168,7 +178,7 @@ button, select { cursor: pointer; }
 }
 .logout-btn:hover { background: rgba(255, 105, 92, 0.2); }
 
-/* Conteneur de l'avatar (autorise le débordement de la décoration) */
+/* Conteneur de l'avatar */
 .discord-avatar-wrapper {
   position: relative;
   display: inline-flex;
@@ -178,16 +188,28 @@ button, select { cursor: pointer; }
   overflow: visible !important;
 }
 
-.discord-avatar-wrapper.avatar-header { width: 32px; height: 32px; }
-.discord-avatar-wrapper.avatar-dashboard { width: 42px; height: 42px; }
+.discord-avatar-wrapper.avatar-header,
+.avatar { 
+  width: 36px !important; 
+  height: 36px !important; 
+}
 
-/* Avatar rond */
-.discord-avatar-img {
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
+.discord-avatar-wrapper.avatar-dashboard { 
+  width: 42px !important; 
+  height: 42px !important; 
+}
+
+/* Avatar rond ultra-strict */
+.discord-avatar-img,
+.avatar img,
+.user-chip img {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 
 /* Décoration Discord superposée */
@@ -196,8 +218,8 @@ button, select { cursor: pointer; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
+  width: 120% !important;
+  height: 120% !important;
   pointer-events: none;
   object-fit: contain;
   z-index: 2;
