@@ -3,216 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard · RaidDefender</title>
-  <link rel="stylesheet" href="../css/dashboard.css">
-  <script src="../js/dashboard.js" defer></script>
+  <title>RaidDefender - Anti-Raid Discord</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <script src="../js/stats.js" defer></script>
   <script src="../js/discord-auth.js" defer></script>
   <link rel="icon" href="../assets/raiddefender.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/raiddefender.png">
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="server-rail" id="serverRail" aria-label="Serveurs">
-      <a class="server-home" href="index.html" title="RaidDefender">
-        <img src="../assets/raidDefender.png" alt="RaidDefender">
-      </a>
-      <div class="server-separator"></div>
-      <div class="server-list" id="guildPicker"></div>
-    </aside>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Accueil RaidDefender">
+      <img class="brand-logo" src="../assets/raiddefender.png" alt="RaidDefender">
+      <span>RaidDefender</span>
+    </a>
 
-    <aside class="sidebar">
-      <a class="brand" href="index.html">
-        <img src="../assets/raidDefender.png" alt="">
-        <span>RaidDefender</span>
-      </a>
-      
-      <div class="guild-current">
-        <strong id="guildName">RaidDefender • Staff</strong>
-        <small id="guildHint" data-i18n="guildHint">Serveurs où tu es admin</small>
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="commandes.html">Commandes Bot</a>
+      <a href="conditions.html">Conditions</a>
+      <a href="confidentialite.html">Confidentialite</a>
+      <a href="notre equipe.html">Notre equipe</a>
+      <a href="premium.html">Premium</a>
+      <a data-discord-login href="/.netlify/functions/discord-login">Connexion Discord</a>
+      <a href="/.netlify/functions/discord-logout" class="logout-link" style="display:none;">Déconnexion</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-media">
+        <img src="../assets/raidDefender-bannier.png" alt="RaidDefender, bot antiraid, securite, performance">
       </div>
 
-      <nav class="side-nav" aria-label="Navigation dashboard">
-        <a class="active" href="#overview" id="navOverview"><span>▦</span> Vue d’ensemble</a>
-        <a href="#protections" id="navProtections"><span>◈</span> Protections</a>
-        <a href="#moderation" id="navModeration"><span>◉</span> Modération</a>
-        <a href="#settings" id="navSettings"><span>⚙</span> Paramètres</a>
-      </nav>
+      <div class="hero-content">
+        <p class="eyebrow">Protection anti-raid Discord</p>
+        <h1>RaidDefender garde ton serveur sous controle.</h1>
+        <p class="intro">
+          Detection rapide, blocage automatique, blacklist centralisee et statistiques en temps reel pour garder ta communaute tranquille.
+        </p>
 
-      <div class="sidebar-bottom">
-        <div class="lang-selector-sidebar">
-          <select id="languageSelect" onchange="changeLanguage(this.value)" aria-label="Changer la langue">
-            <option value="fr" selected>FR Français</option>
-            <option value="en">GB English</option>
-          </select>
+        <div class="actions">
+          <a class="primary-action" href="commandes.html">Voir les commandes</a>
+          <a class="secondary-action" href="#stats">Voir les stats</a>
         </div>
-        <a href="index.html" id="backToSiteLink">↗ Retour au site</a>
-        <a href="/.netlify/functions/discord-logout" class="logout-link" style="color: #ff5c5c; margin-top: 8px; display: inline-block;">Déconnexion</a>
-        <span>v1.0.0 · RaidDefender</span>
       </div>
-    </aside>
+    </section>
 
-    <main class="dashboard">
-      <header class="topbar">
-        <button class="menu-button" type="button" aria-label="Afficher le menu">☰</button>
-        <div>
-          <p class="breadcrumb"><span data-i18n="breadcrumbDashboard">Dashboard</span> / <span id="breadcrumbCurrent">Vue d’ensemble</span></p>
-          <h1 id="welcomeGreeting">Bonjour, <span id="userName">Cryonix1337</span> ✦</h1>
-        </div>
-        <div class="top-actions">
-          <button class="icon-button" type="button" aria-label="Notifications">♧<i></i></button>
-          <div class="avatar" role="img" aria-label="Profil"></div>
-        </div>
-      </header>
+    <section class="features">
+      <div>
+        <p class="eyebrow">Defense automatique</p>
+        <h2>Une securite claire, rapide et visible.</h2>
+      </div>
 
-      <section class="status-card" id="overview">
-        <div class="status-main">
-          <span class="shield">⌾</span>
-          <div>
-            <p class="section-label" data-i18n="statusLabel">État de la protection</p>
-            <h2><span class="pulse"></span> <span id="statusTitle">RaidDefender est actif</span></h2>
-            <p id="statusDesc">La protection de <strong id="statusGuild">RaidDefender • Staff</strong> fonctionne normalement.</p>
-          </div>
-        </div>
-        <div class="status-actions">
-          <span class="uptime" id="uptimeText">● 99,98 % de disponibilité</span>
-          <label class="switch-label">
-            <input id="masterSwitch" type="checkbox" checked>
-            <span class="switch"></span>
-            <span id="masterText">Activé</span>
-          </label>
-        </div>
-      </section>
-
-      <section class="metrics" aria-label="Statistiques du serveur">
+      <div class="feature-grid">
         <article>
-          <span class="metric-icon violet">♜</span>
-          <div>
-            <span id="labelProtected">Membres protégés</span>
-            <strong id="memberCount">2 847</strong>
-            <small id="subProtected">+12 cette semaine</small>
-          </div>
+          <h3>Anti-raid</h3>
+          <p>Analyse les arrivees massives, les comptes suspects et les actions dangereuses avant qu'elles explosent le serveur.</p>
         </article>
         <article>
-          <span class="metric-icon blue">◉</span>
-          <div>
-            <span id="labelBlocked">Actions bloquées</span>
-            <strong>37</strong>
-            <small class="good" id="subBlocked">↗ +18 % ce mois</small>
-          </div>
+          <h3>Blacklist</h3>
+          <p>Garde une liste noire synchronisee pour bloquer les profils deja identifies comme menaces.</p>
         </article>
         <article>
-          <span class="metric-icon orange">◷</span>
-          <div>
-            <span id="labelAlerts">Alertes aujourd’hui</span>
-            <strong>4</strong>
-            <small id="subAlerts">Dernière il y a 18 min</small>
-          </div>
+          <h3>Logs propres</h3>
+          <p>Affiche les actions importantes dans un salon de logs pour comprendre ce que le bot a bloque.</p>
         </article>
         <article>
-          <span class="metric-icon green">✓</span>
-          <div>
-            <span id="labelModules">Modules actifs</span>
-            <strong id="moduleTotal">0 / 18</strong>
-            <small id="subModules">Configuration à jour</small>
-          </div>
+          <h3>Configuration</h3>
+          <p>Active les protections dont tu as besoin sans noyer ton equipe sous des reglages inutiles.</p>
         </article>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="content-grid">
-        <div class="panel activity">
-          <div class="panel-head">
-            <div>
-              <p class="section-label" id="labelHours">Dernières 24 heures</p>
-              <h2 id="titleActivity">Activité de sécurité</h2>
-            </div>
-            <button class="text-button" type="button" id="btnLogs">Voir les logs →</button>
-          </div>
-          <div class="chart">
-            <div class="chart-lines"></div>
-            <svg viewBox="0 0 600 180" preserveAspectRatio="none" aria-label="Graphique des actions bloquées">
-              <defs>
-                <linearGradient id="fill" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0" stop-color="#7c5cff" stop-opacity=".38"/>
-                  <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 154 C35 142 47 150 72 124 S106 142 130 128 S166 84 195 115 S237 126 261 98 S291 109 316 76 S353 111 378 82 S417 120 441 101 S478 59 503 79 S548 34 600 52 L600 180 L0 180Z" fill="url(#fill)"/>
-            </svg>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel modules" id="protections">
-        <div class="panel-head">
-          <div>
-            <p class="section-label" id="labelConfig">Configuration</p>
-            <h2 id="titleModules">Modules de protection</h2>
-          </div>
-          <div class="module-controls">
-            <button id="enableAll" class="text-button" type="button">Tout activer</button>
-            <button id="disableAll" class="text-button muted-button" type="button">Tout désactiver</button>
-          </div>
-        </div>
-        <p class="panel-description" id="descModules">Activez uniquement les protections adaptées à votre communauté. Chaque changement est sauvegardé automatiquement.</p>
-        <div class="module-grid" id="moduleGrid"></div>
-      </section>
-
-      <section class="settings-grid" id="settings">
-        <form class="panel settings-form" id="settingsForm">
-          <div class="panel-head">
-            <div>
-              <p class="section-label" id="labelSettingsSec">Réglages généraux</p>
-              <h2 id="titleSettings">Canaux et détection</h2>
-            </div>
-            <button class="save-button" type="submit" id="btnSave">Enregistrer</button>
-          </div>
-          <div class="form-grid">
-            <label id="lblAlertChan">Salon d’alertes<input name="alertChannel" placeholder="securite-alertes"></label>
-            <label id="lblLogChan">Salon de logs<input name="logChannel" placeholder="logs-RaidDefender"></label>
-            <label id="lblJoins">Arrivées / minute<input name="joinsPerMinute" type="number" min="1"></label>
-            <label id="lblMentions">Mentions / message<input name="mentionsPerMessage" type="number" min="1"></label>
-            <label id="lblMessages">Messages / 10 sec.<input name="messagesPerTenSeconds" type="number" min="1"></label>
-            <label id="lblAge">Âge minimal du compte (jours)<input name="accountAgeDays" type="number" min="0"></label>
-          </div>
-        </form>
-
-        <div class="panel events">
-          <div class="panel-head">
-            <div>
-              <p class="section-label" id="labelLiveSec">En direct</p>
-              <h2 id="titleEvents">Événements récents</h2>
-            </div>
-            <span class="live-label">● LIVE</span>
-          </div>
-          <ul>
-            <li>
-              <span class="event-dot purple"></span>
-              <div>
-                <strong id="evt1Title">Lien externe supprimé</strong>
-                <small id="evt1Sub">#général · il y a 18 min</small>
-              </div>
-              <b>Anti-link</b>
-            </li>
-            <li>
-              <span class="event-dot orange"></span>
-              <div>
-                <strong id="evt2Title">Raid suspect détecté</strong>
-                <small id="evt2Sub">3 arrivées groupées · il y a 46 min</small>
-              </div>
-              <b>Anti-raid</b>
-            </li>
-            <li>
-              <span class="event-dot green"></span>
-              <div>
-                <strong id="evt3Title">Captcha validé</strong>
-                <small id="evt3Sub">Nouvel arrivant · il y a 1 h</small>
-              </div>
-              <b>Captcha</b>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </main>
-  </div>
-  <div class="toast" role="status" id="toast"></div>
+  <footer class="footer">
+    <span>RaidDefender</span>
+    <span>Bot anti-raid Discord</span>
+  </footer>
 </body>
 </html>
