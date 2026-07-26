@@ -79,12 +79,18 @@ a {
   background: rgba(101, 184, 255, 0.12);
 }
 
-/* Profil Discord connecté */
+/* Profil Discord connecté (CORRIGÉ) */
+.user-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .nav a.user-chip {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 12px 6px 6px;
+  padding: 6px 14px 6px 6px;
   border-radius: 999px;
   color: var(--text);
   background: rgba(101, 184, 255, 0.14);
@@ -96,12 +102,15 @@ a {
   background: rgba(101, 184, 255, 0.22);
 }
 
-.user-chip-avatar {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
+.user-chip-avatar,
+.user-chip img {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -111,6 +120,25 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 0.9rem;
+}
+
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #ff8f8f !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 100, 100, 0.25);
+  background: rgba(255, 80, 80, 0.08);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 80, 80, 0.18) !important;
+  color: #ffb4b4 !important;
 }
 
 .hero {
@@ -146,10 +174,7 @@ a {
   font-weight: 800;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
   margin-top: 0;
 }
 
@@ -323,31 +348,4 @@ h1 {
   .footer {
     flex-direction: column;
   }
-}
-
-
-/* Menu utilisateur + déconnexion */
-.user-menu {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logout-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 12px;
-  border-radius: 8px;
-  color: #ff8f8f !important;
-  font-size: 0.88rem;
-  font-weight: 700;
-  border: 1px solid rgba(255, 100, 100, 0.25);
-  background: rgba(255, 80, 80, 0.08);
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.logout-btn:hover {
-  background: rgba(255, 80, 80, 0.18) !important;
-  color: #ffb4b4 !important;
 }
