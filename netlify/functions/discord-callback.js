@@ -8,7 +8,7 @@ function htmlError(message, status = 400) {
 <style>body{font-family:system-ui,sans-serif;background:#0b1220;color:#eef7ff;display:grid;place-items:center;min-height:100vh;margin:0}
 .card{max-width:420px;padding:28px;border-radius:12px;background:#162033;border:1px solid #2a3b55;text-align:center}
 a{color:#4de1ff}</style></head><body><div class="card"><h1>Connexion Discord</h1><p>${message}</p>
-<p><a href="/site/pages/index.html">Retour à l'accueil</a> · <a href="/.netlify/functions/discord-login">Réessayer</a></p></div></body></html>`,
+<p><a href="/pages/index.html">Retour à l'accueil</a> · <a href="/.netlify/functions/discord-login">Réessayer</a></p></div></body></html>`,
   };
 }
 
@@ -110,7 +110,7 @@ exports.handler = async (event) => {
 
     // Chemin cohérent avec ta structure (root → site/pages/...)
     const appUrl = (process.env.APP_URL || "").replace(/\/$/, "");
-    const dashboardPath = "/site/pages/dashboard.html";
+    const dashboardPath = "/pages/dashboard.html";
     const location = appUrl ? `${appUrl}${dashboardPath}` : dashboardPath;
 
     // ✅ CORRECTION ICI : Utilisation de multiValueHeaders pour le tableau de cookies
