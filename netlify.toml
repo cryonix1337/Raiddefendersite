@@ -1,11 +1,15 @@
 [build]
-  publish = "site/pages"
+  publish = "site"
   functions = "netlify/functions"
 
 [functions]
   node_bundler = "esbuild"
 
-# Headers utiles pour les cookies de session
+[[redirects]]
+  from = "/"
+  to = "/pages/index.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
