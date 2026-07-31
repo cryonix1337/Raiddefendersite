@@ -4,7 +4,10 @@ const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
 const crypto = require("crypto");
+
 require("dotenv").config();
+
+const TEAM_FILE = path.join(__dirname, "site", "data", "team.json");
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
@@ -220,6 +223,30 @@ a{color:#4de1ff}</style></head><body><div class="card"><h1>Connexion Discord</h1
     const user = await userResponse.json();
     if (!userResponse.ok) throw new Error("profile_error");
 
+    // Fabrication automatique de l'URL de l'avatar
+    const avatarUrl = user.avatar
+      ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`
+      : `https://cdn.discordapp.com/embed/avatars/${Number(user.id) % 5}.png`;
+
+    // Mise à jour automatique de team.json si l'utilisateur est dans l'équipe
+    try {
+      if (fs.existsSync(TEAM_FILE)) {
+        let members = JSON.parse(fs.readFileSync(TEAM_FILE, "utf8"));
+        let memberIndex = members.findIndex(m => m.id === user.id);
+        
+        if (memberIndex !== -1) {
+          members[memberIndex].username = user.global_name || user.username;
+          members[memberIndex].avatar = avatarUrl;
+          members[memberIndex].updatedAt = new Date().toISOString();
+          
+          fs.writeFileSync(TEAM_FILE, JSON.stringify(members, null, 2));
+          console.log(`[TEAM AUTO-SYNC] Avatar mis à jour pour ${members[memberIndex].username}`);
+        }
+      }
+    } catch (err) {
+      console.error("Erreur lors de la synchro auto de l'avatar :", err);
+    }
+
     const guildResponse = await fetch("https://discord.com/api/users/@me/guilds", {
       headers: { Authorization: `Bearer ${tokens.access_token}` },
     });
@@ -257,7 +284,7 @@ a{color:#4de1ff}</style></head><body><div class="card"><h1>Connexion Discord</h1
     const profile = {
       id: user.id,
       username: user.global_name || user.username,
-      avatar: user.avatar,
+      avatar: avatarUrl,
       guilds: botGuilds,
     };
 
@@ -265,7 +292,6 @@ a{color:#4de1ff}</style></head><body><div class="card"><h1>Connexion Discord</h1
     res.append("Set-Cookie", clearOauthCookie());
     res.setHeader("Cache-Control", "no-store");
     console.log("Connexion OK:", profile.username, "| guildes:", profile.guilds.length);
-    // Avec express.static("site"), les pages sont sous /pages/...
     res.redirect(302, "/pages/dashboard.html");
   } catch (err) {
     console.error("discord-callback:", err.message || err);
@@ -332,12 +358,100 @@ app.post("/api/create-checkout-session", async (req, res) => {
   }
 });
 
+// =====================================================
+// API TEAM
+// =====================================================
+
+app.get("/api/team", (req, res) => {
+    try {
+        if (!fs.existsSync(TEAM_FILE)) {
+            return res.json([]);
+        }
+        const members = JSON.parse(
+            fs.readFileSync(TEAM_FILE, "utf8")
+        );
+        res.json(members);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({
+            error: "Impossible de charger team.json"
+        });
+    }
+});
+
+app.post("/api/update-profile", (req, res) => {
+    const auth = req.headers.authorization;
+    if (auth !== `Bearer ${process.env.API_SECRET || "CLE_SECRETE_DASHBOARD"}`) {
+        return res.status(401).json({
+            success: false,
+            message: "Non autorisé"
+        });
+    }
+
+    const {
+        discordId,
+        username,
+        avatarUrl
+    } = req.body;
+
+    try {
+        if (!fs.existsSync(TEAM_FILE)) {
+            return res.status(404).json({
+                success: false,
+                message: "team.json introuvable"
+            });
+        }
+
+        const members = JSON.parse(
+            fs.readFileSync(TEAM_FILE, "utf8")
+        );
+
+        const member = members.find(
+            m => m.id === discordId
+        );
+
+        if (!member) {
+            return res.json({
+                success: false,
+                message: "Utilisateur non trouvé."
+            });
+        }
+
+        member.username = username;
+        member.avatar = avatarUrl;
+        member.updatedAt = new Date().toISOString();
+
+        fs.writeFileSync(
+            TEAM_FILE,
+            JSON.stringify(
+                members,
+                null,
+                2
+            )
+        );
+
+        console.log(
+            `[TEAM] ${username} synchronisé.`
+        );
+
+        res.json({
+            success: true
+        });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({
+            success: false
+        });
+    }
+});
+
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "site", "pages", "index.html")));
 
 app.listen(port, () => {
   console.log("");
   console.log("  RaidDefender — serveur local");
-  console.log(`  Site      : ${appUrl}`);
+  console.log(`  Site     : ${appUrl}`);
   console.log(`  Accueil   : ${appUrl}/pages/index.html`);
   console.log(`  Dashboard : ${appUrl}/pages/dashboard.html`);
   console.log(`  Login     : ${appUrl}/.netlify/functions/discord-login`);
