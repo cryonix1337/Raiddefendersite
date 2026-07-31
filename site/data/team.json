@@ -1,0 +1,82 @@
+[
+  {
+    "id": "837217790929928223",
+    "username": "cryonix1337",
+    "avatar": "https://cdn.discordapp.com/avatars/837217790929928223/476acf21e0a3e6626ac1ec0324d6928d.webp?size=512",
+    "category": "owner",
+    "role": "OWNER • INSPECTEUR MANAGER",
+    "description": "Fondateur de RaidDefender et développeur principal."
+  },
+  {
+    "id": "872039839099400242",
+    "username": "Katanades",
+    "avatar": "https://cdn.discordapp.com/avatars/872039839099400242/5276b9d0d4587625b7a1415835232e8a.webp?size=512",
+    "category": "owner",
+    "role": "OWNER • INSPECTEUR MANAGER",
+    "description": "Gestion du serveur, administration générale."
+  },
+  {
+    "id": "810496362239492137",
+    "username": "bugsy_didi",
+    "avatar": "https://cdn.discordapp.com/avatars/810496362239492137/4f34bbafd80bfa2c65a019a65714a16d.webp?size=512",
+    "category": "owner",
+    "role": "OWNER • INSPECTEUR MANAGER",
+    "description": "Infrastructure et sécurité."
+  },
+  {
+    "id": "1118216318030717098",
+    "username": "vanoutte",
+    "avatar": "https://cdn.discordapp.com/avatars/1118216318030717098/b0fdee0aa661ec8a0c2282e86ae96c81.webp?size=512",
+    "category": "coowner",
+    "role": "CO-OWNER",
+    "description": "Supervision des équipes."
+  },
+  {
+    "id": "1294357731192606804",
+    "username": "MACARO",
+    "avatar": "https://cdn.discordapp.com/avatars/1294357731192606804/5ef17c8a024e047972da72aceb5f19e5.webp?size=512",
+    "category": "direction",
+    "role": "CO-DIRECTEUR • INSPECTEUR MANAGER",
+    "description": "Gestion opérationnelle."
+  },
+  {
+    "id": "418762464893730816",
+    "username": "brokenvalor",
+    "avatar": "https://cdn.discordapp.com/avatars/418762464893730816/a8ee5adae98d9d0fab54e8e3763a90a6.webp?size=512",
+    "category": "direction",
+    "role": "CO-DIRECTEUR • INSPECTEUR MANAGER",
+    "description": "Organisation interne."
+  },
+  {
+    "id": "1445329921709834324",
+    "username": "vxzu._",
+    "avatar": "https://cdn.discordapp.com/avatars/1445329921709834324/5e5376d38ac6c04095047739302a8409.webp?size=512",
+    "category": "fondation",
+    "role": "FONDATEUR",
+    "description": "Fondateur historique."
+  },
+  {
+    "id": "1328017152590221362",
+    "username": "neufthree9",
+    "avatar": "https://cdn.discordapp.com/avatars/1328017152590221362/b41d44695ac0ca9522f5cc773eefbe79.webp?size=512",
+    "category": "admin",
+    "role": "ADMINISTRATEUR",
+    "description": "Administration générale."
+  },
+{
+    "id": "1433806985425457157",
+    "username": "us3r_lzz03",
+    "avatar": "https://cdn.discordapp.com/avatars/1433806985425457157/6f73ffbe42646d532485984e4b41cc88.webp?size=512",
+    "category": "admin",
+    "role": "ADMINISTRATEUR",
+    "description": "Administration générale."
+},
+  {
+  "id": "1021101525126361239",
+  "username": "blasswarriors",
+  "avatar": "https://cdn.discordapp.com/avatars/1021101525126361239/f02d32129d008b869047bc28a597a60f.webp?size=512",
+  "category": "inspecteur",
+  "role": "INSPECTEUR",
+  "description": "Analyse des signalements et vérifications."
+}
+]
