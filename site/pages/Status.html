@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RaidDefender Status</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: white;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(900px, 92%);
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+
+    .overall {
+      background: #0d1b2d;
+      border: 1px solid #1d3557;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .overall-status {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .green {
+      color: #22c55e;
+    }
+
+    .yellow {
+      color: #f59e0b;
+    }
+
+    .red {
+      color: #ef4444;
+    }
+
+    .services {
+      background: #0d1b2d;
+      border: 1px solid #1d3557;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .services-title {
+      padding: 20px;
+      border-bottom: 1px solid #1d3557;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .service {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 19px 20px;
+      border-bottom: 1px solid #17283e;
+    }
+
+    .service:last-child {
+      border-bottom: none;
+    }
+
+    .service-name {
+      font-weight: 500;
+    }
+
+    .service-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #94a3b8;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      background: #64748b;
+    }
+
+    .dot.green {
+      background: #22c55e;
+    }
+
+    .dot.yellow {
+      background: #f59e0b;
+    }
+
+    .dot.red {
+      background: #ef4444;
+    }
+
+    .latency {
+      margin-top: 25px;
+      background: #0d1b2d;
+      border: 1px solid #1d3557;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      color: #64748b;
+      margin-top: 35px;
+      font-size: 14px;
+    }
+
+    .refresh {
+      margin-top: 8px;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 35px 0;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .service {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header class="header">
+      <div class="logo">🛡️</div>
+
+      <h1>RaidDefender Status</h1>
+
+      <p class="subtitle">
+        État des services RaidDefender
+      </p>
+    </header>
+
+    <section class="overall">
+
+      <div id="overallStatus" class="overall-status yellow">
+        🟡 Vérification des systèmes...
+      </div>
+
+      <div id="lastUpdate" class="refresh">
+        Chargement...
+      </div>
+
+    </section>
+
+    <section class="services">
+
+      <div class="services-title">
+        Services
+      </div>
+
+      <div class="service">
+        <span class="service-name">
+          🤖 RaidDefender Bot
+        </span>
+
+        <span class="service-right">
+          <span id="botDot" class="dot"></span>
+          <span id="botStatus">...</span>
+        </span>
+      </div>
+
+      <div class="service">
+        <span class="service-name">
+          🌐 Discord Gateway
+        </span>
+
+        <span class="service-right">
+          <span id="gatewayDot" class="dot"></span>
+          <span id="gatewayStatus">...</span>
+        </span>
+      </div>
+
+      <div class="service">
+        <span class="service-name">
+          ⚡ API
+        </span>
+
+        <span class="service-right">
+          <span id="apiDot" class="dot"></span>
+          <span id="apiStatus">...</span>
+        </span>
+      </div>
+
+      <div class="service">
+        <span class="service-name">
+          📊 Dashboard
+        </span>
+
+        <span class="service-right">
+          <span id="dashboardDot" class="dot"></span>
+          <span id="dashboardStatus">...</span>
+        </span>
+      </div>
+
+      <div class="service">
+        <span class="service-name">
+          🌍 Website
+        </span>
+
+        <span class="service-right">
+          <span id="websiteDot" class="dot"></span>
+          <span id="websiteStatus">...</span>
+        </span>
+      </div>
+
+    </section>
+
+    <section class="latency">
+
+      <strong>Latence du bot</strong>
+
+      <div id="latency" style="margin-top:8px;color:#94a3b8;">
+        ...
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      RaidDefender © 2026
+
+      <div id="nextRefresh" class="refresh">
+        Actualisation automatique toutes les 30 secondes
+      </div>
+    </footer>
+
+  </main>
+
+<script>
+
+const API = "/.netlify/functions/status";
+
+const names = {
+  operational: "Opérationnel",
+  degraded: "Dégradé",
+  outage: "Panne",
+  unknown: "Inconnu"
+};
+
+function updateService(id, status) {
+
+  const dot = document.getElementById(id + "Dot");
+  const text = document.getElementById(id + "Status");
+
+  if (!dot || !text) return;
+
+  dot.className = "dot";
+
+  if (status === "operational") {
+    dot.classList.add("green");
+  }
+
+  else if (status === "degraded") {
+    dot.classList.add("yellow");
+  }
+
+  else if (status === "outage") {
+    dot.classList.add("red");
+  }
+
+  text.textContent = names[status] || "Inconnu";
+}
+
+async function loadStatus() {
+
+  try {
+
+    const response = await fetch(API, {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error("API error");
+    }
+
+    const data = await response.json();
+
+    updateService("bot", data.services.bot);
+    updateService("gateway", data.services.gateway);
+    updateService("api", data.services.api);
+    updateService("dashboard", data.services.dashboard);
+    updateService("website", data.services.website);
+
+    const overall = document.getElementById("overallStatus");
+
+    if (data.status === "operational") {
+
+      overall.className = "overall-status green";
+      overall.textContent =
+        "🟢 Tous les systèmes sont opérationnels";
+
+    } else {
+
+      overall.className = "overall-status yellow";
+      overall.textContent =
+        "🟡 Certains systèmes rencontrent des problèmes";
+
+    }
+
+    const latency = document.getElementById("latency");
+
+    if (data.latency !== null && data.latency !== undefined) {
+      latency.textContent = data.latency + " ms";
+    } else {
+      latency.textContent = "Indisponible";
+    }
+
+    document.getElementById("lastUpdate").textContent =
+      "Dernière mise à jour : " +
+      new Date(data.updatedAt).toLocaleTimeString("fr-FR");
+
+  } catch (error) {
+
+    document.getElementById("overallStatus").className =
+      "overall-status red";
+
+    document.getElementById("overallStatus").textContent =
+      "🔴 Impossible de récupérer le statut";
+
+  }
+
+}
+
+loadStatus();
+
+setInterval(loadStatus, 30000);
+
+</script>
+
+</body>
+</html>
